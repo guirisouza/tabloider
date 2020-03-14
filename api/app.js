@@ -31,12 +31,14 @@ app.use(fileUpload());
 
 
 const cors = require('cors');
-app.use(
-    cors({
-      credentials: true,
-      origin: [process.env.FRONT_URL] // <== this will be the URL of our React app (it will be running on port 3000)
-    })
-  );
+// app.use(
+//     cors({
+//       credentials: true,
+//       origin: [process.env.FRONT_URL] // <== this will be the URL of our React app (it will be running on port 3000)
+//     })
+//   );
+
+app.use(cors())
   
 const index = require('./routes/index');
 const product = require('./routes/products');

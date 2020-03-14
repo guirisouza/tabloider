@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {Redirect} from 'react-router-dom';
 import {StyledContainerRegister, StyledInput, StyledForm} from './style'
 import axios from 'axios'
+import {api} from '../../apiEnvironment'
 
 function Register() {
 
@@ -32,7 +33,7 @@ function Register() {
         }
 
         if(isValid) {
-            axios.post('http://localhost:5000/api/user/signup', {
+            api.post(`/user/signup`, {
                 email: fields.email,
                 password: fields.password,
                 name: fields.name
