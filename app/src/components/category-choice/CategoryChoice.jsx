@@ -5,6 +5,7 @@ import Stepper from '../stepper/Stepper'
 import {useSpring, animated} from 'react-spring'
 import axios from 'axios'
 import SideMenuNavBar from '../side-menu-nav-bar/SideMenuNavBar'
+import {api} from '../../apiEnvironment'
 
 const CategoryChoice = (props) => {
 
@@ -19,12 +20,12 @@ const CategoryChoice = (props) => {
 
     useEffect(()=>{
         console.log(props.children)
-        axios.get('http://localhost:5000/api/product')
+        api.get('/api/product')
         .then(response => {
                 localStorage.setItem('products', JSON.stringify(response.data.data))
         });
 
-        axios.get('http://localhost:5000/api/credit-card')
+        api.get('/api/credit-card')
         .then(response => {
                 localStorage.setItem('credit-card', JSON.stringify(response.data.data))
         })
