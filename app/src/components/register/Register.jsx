@@ -34,7 +34,7 @@ function Register() {
         }
 
         if(isValid) {
-            api.post(`/user/signup`, {
+            api.post(`api/user/signup`, {
                 email: fields.email,
                 password: fields.password,
                 name: fields.name

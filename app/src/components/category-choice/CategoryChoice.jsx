@@ -20,12 +20,12 @@ const CategoryChoice = (props) => {
 
     useEffect(()=>{
         console.log(props.children)
-        api.get('/api/product')
+        api.get('api/product')
         .then(response => {
                 localStorage.setItem('products', JSON.stringify(response.data.data))
         });
 
-        api.get('/api/credit-card')
+        api.get('api/credit-card')
         .then(response => {
                 localStorage.setItem('credit-card', JSON.stringify(response.data.data))
         })
