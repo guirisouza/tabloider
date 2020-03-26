@@ -7,6 +7,8 @@ const StyledContainerStepper = styled.div`
 `
 
 const StyledUl = styled.ul`
+    display: flex;
+    justify-content: center;
     counter-reset:  step;
 
     li:before {

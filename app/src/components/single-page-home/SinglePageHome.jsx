@@ -3,6 +3,7 @@ import MenuNavBar from '../menu-nav-bar/MenuNavBar'
 import { useSpring, animated } from 'react-spring'
 import {StyledFirstContainer, StyledBody, BoxTextSpring, StyledTrialBox, StyledTopBanner, StyledSecondContainer, StyledThirdContainer, StyledPlanInfo, StyledPlanTag, StyledContractButton, StyledPlans} from './style'
 
+
 const SinglePageHome = () => {
 
     const [state, setState] = React.useState({
@@ -40,7 +41,9 @@ const SinglePageHome = () => {
             </StyledFirstContainer>
             
             <StyledSecondContainer>
-                <h1>Escolha seus produtos, coloqueo os preços e pronto, seu jornal de promoção está pronto pra ser compartilhado como quiser!</h1>
+            <iframe src="https://player.vimeo.com/video/401123432" width="640" height="319" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+                <h1>Escolha seus produtos, coloque os preços e pronto, seu jornal de promoção está pronto em menos de 3 minutos pra ser compartilhado como quiser!</h1>
             </StyledSecondContainer>
 
             <StyledThirdContainer>

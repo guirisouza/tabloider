@@ -234,6 +234,20 @@ const StyledButton = styled.button`
     cursor: pointer;
 `
 
+const StyledButtonCreateJornal = styled.button`
+    background-color: #08AEEA;
+    width: 400px;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+    border: 0px;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+    color: white;
+    height: 48px;
+    padding: 0 30px;
+    margin-top: 10px;
+    cursor: pointer;
+`
+
 const StyledFooterCreatorContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -250,5 +264,6 @@ export {
         StyledProductCard, 
         StyledContainerImage,
         StyledFooterCreatorContainer,
-        StyledContactInput
+        StyledContactInput,
+        StyledButtonCreateJornal
     }

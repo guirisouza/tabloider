@@ -13,6 +13,8 @@ const CategoryChoice = (props) => {
     const [chosenCategory, setChosenCategory] = useState(false)
     const [showDialog, setShowDialog] = useState(false)
     const [isToggled, setToggled] = useState(false)
+    const [step, setStep] = useState(1)
+    const [steps, setSteps] = useState(['Escolha uma categoria para seu tabloide'])
     const fade = useSpring({
         opacity: isToggled ? 1:0
     })
@@ -31,9 +33,17 @@ const CategoryChoice = (props) => {
         })
     },[])
 
-    const handleChosen = (event) => {
-        setChosenCategory(!chosenCategory)
-        setToggled(!isToggled)
+
+    const handleStep = () => {
+            setSteps([...steps, 'Agora escolha o tema do tabloide '])   
+        
+    }
+
+    const handleChosen = async (event) => {
+        await setStep(step+1)
+        await setChosenCategory(!chosenCategory)
+        await setToggled(!isToggled)
+        await handleStep()
     }
 
     const handleDialog = () => {
@@ -44,7 +54,7 @@ const CategoryChoice = (props) => {
             <>
             
             <StyledFullContainer>
-            <Stepper  />
+            <Stepper  step={{step: step, steps}}/>
             <SideMenuNavBar></SideMenuNavBar>
         
             <StyledContainer>
@@ -59,11 +69,9 @@ const CategoryChoice = (props) => {
                 {
                     chosenCategory ? (
                         <StyledScrollerContainer style={fade}>
-                            <a onClick={()=> {handleDialog()}}><img src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/Layout+Novo-FDS+(2).png" alt="teste"/></a>
-                            <img src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/QUARTA-DO-LEITE-MARISTELA+(4).png" alt="teste"/>
-                            <img src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/QUINTA-DA-CARNE+(1).png" alt="teste"/>
-                            <img src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/SEXTA-VERDE-MARISTELA+(2).png" alt="teste"/>
-                            <img src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/WhatsApp+Image+2019-07-22+at+9.18.06+PM.jpeg" alt="teste"/>
+                            <a onClick={()=> {handleDialog()}}><img src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/SEXTA-VERDE-MARISTELA+(7).png" alt="teste"/></a>
+                            <img src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/horti-1.png" alt="teste"/>
+
                         </StyledScrollerContainer>
                     ) :('')
                 } 

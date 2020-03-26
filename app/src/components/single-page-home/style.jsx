@@ -91,6 +91,8 @@ const StyledTopBanner = styled.div`
 `
 const StyledSecondContainer = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 50px;
     width: 100%;
     height: 90vh;
@@ -101,6 +103,10 @@ const StyledSecondContainer = styled.div`
         width: 550px;
         color: #2267ff;
         font-size: 3.0em;
+    }
+
+    iframe {
+        margin-right: 80px;
     }
 `
 

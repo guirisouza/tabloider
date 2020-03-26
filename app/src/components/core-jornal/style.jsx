@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 import { style } from '@material-ui/system';
 
+
 const StyledFullContainer = styled.div`
     width: 1519px;
-    border: solid 1px red;
     font-family: 'Indie Flower', cursive;
 
     ${props => props.preview && css `
         margin: 0 auto;
-        zoom: 100%;
+        zoom: 50%;
     `};
 
 `

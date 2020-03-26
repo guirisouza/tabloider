@@ -22,9 +22,9 @@ export default function ShowcaseJornalTemaplate(props) {
         redirect && <Redirect to='/product-choice'/>
       }
       <Dialog open={props.open} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+        <DialogTitle id="form-dialog-title">Quarta Verde</DialogTitle>
         <DialogContent>
-          <img  style={{maxHeight: '500px'}} src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/QUARTA-DO-LEITE-MARISTELA+(4).png" alt="teste"/>
+          <img  style={{maxHeight: '500px'}} src="https://fake-products.s3-sa-east-1.amazonaws.com/assets/templates/SEXTA-VERDE-MARISTELA+(7).png" alt="teste"/>
         </DialogContent>
         <DialogActions>
           {/* <Button onClick={handleClose} color="primary">

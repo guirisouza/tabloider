@@ -6,7 +6,7 @@ import {StyledFullContainer} from './style'
 
 function JornalGenCore(props) {
 
-    console.log('entrou');
+    console.log('entrou gerar jornal', props);
     
     // React.useEffect(() => {
     //     console.log('PROPSSSSSSSSSSS',props.location.state.products)
@@ -19,8 +19,8 @@ function JornalGenCore(props) {
         <>
             <StyledFullContainer preview="true">
                     <HeaderCore />
-                    <BodyCore products={props.location.state.products}/>
-                    <FooterCore footer={props.location.state.footer}/>
+                    <BodyCore products={props.state.jornalConfig.products}/>
+                    <FooterCore footer={props.state.jornalConfig.footer}/>
             </StyledFullContainer>
         </>
     )

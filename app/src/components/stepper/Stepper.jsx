@@ -1,21 +1,34 @@
 import React, {useState, useEffect} from 'react'
 import {StyledContainerStepper, StyledUl,StyledLiStep} from './style'
 
-const Stepper = () => {
+const Stepper = (props) => {
     const [count, setCount] = useState(0)
+
+    useEffect(()=>{
+    
+    console.log(props)
+
+
+    },[props.step.step])
+
+    const stepperLoop = () => {
+
+
+
+    }
 
     return(
         <StyledContainerStepper>
             <StyledUl>
-                <StyledLiStep>
-                    Escolha a categoria do seu tabloide
-                </StyledLiStep>
-                <StyledLiStep>
-                    Agora escolha o tema que mais gostar
-                </StyledLiStep>
-                <StyledLiStep>
-                    excelente!
-                </StyledLiStep>
+                {
+                    props.step.steps.map((step)=>{
+                        return(
+                            <StyledLiStep>
+                                {step}
+                            </StyledLiStep>
+                        )
+                    })
+                }
             </StyledUl>
         </StyledContainerStepper>
     )
