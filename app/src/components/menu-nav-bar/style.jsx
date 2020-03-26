@@ -47,7 +47,9 @@ const StyledOptionsMenuNavBar = styled.div`
         margin-left: 7vh;
     }
 
-    p {
+    a {
+        color: white;
+        text-decoration: none;
         display: inline;
         margin-left: 60px;
         font-size: 1.2em;
@@ -55,7 +57,7 @@ const StyledOptionsMenuNavBar = styled.div`
     }
 
 
-    p:hover {
+    a:hover {
         color: #ffde59;
         transition: 0.3s;
     }

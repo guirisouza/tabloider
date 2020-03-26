@@ -30,9 +30,12 @@ router.post('/signup', (req, res, next) => {
                             .save()
                             .then(result => {
                                 console.log('userr', result)
-                                Client.create({name: '', footerConfig: [], imageUrl:'', jornalsImages: [], userRef: result._id})
-                                res.status(201).json({
-                                    message: 'user created'
+                                Client.create({name: req.body.email, footerConfig: [], imageUrl:'', jornalsImages: [], userRef: result._id})
+                                .then(resul=>{
+                                    res.json({
+                                        message: 'user created',
+                                        clientId: result._id
+                                    })
                                 })
                             })
                             .catch(err => {

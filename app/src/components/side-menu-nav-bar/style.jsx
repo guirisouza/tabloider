@@ -114,7 +114,6 @@ const StyledLinkText = styled.span`
     display: none;
     margin-left: 1rem;
 
-
 `
 
 const StyledFaGroup = styled.g`

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 const StyledFullContainer = styled.div`
     display: flex;
@@ -46,15 +46,13 @@ const StyledButtonEdit = styled.button`
     margin-top: 10px;
     cursor: pointer;
 `
-const StyledInputFileUpload = styled.input`
 
-`
+
 
 export {
     StyledFullContainer,
     StyledContainerAvatar,
     StyledButtonEdit,
-    StyledContainerConfigs,
-    StyledInputFileUpload,
+    StyledContainerConfigs
 }
 

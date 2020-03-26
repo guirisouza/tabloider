@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import SideMenuNavBar from '../side-menu-nav-bar/SideMenuNavBar';
+import Upload from '../upload/Upload'
 import {StyledButton} from '../product-choice/style'
+import Dropzone from 'react-dropzone'
 import axios from 'axios'
 
 import {
     StyledFullContainer,
     StyledContainerAvatar,
     StyledButtonEdit,
-    StyledContainerConfigs,
-    StyledInputFileUpload
+    StyledContainerConfigs
 } from './style'
  
 
@@ -20,10 +21,8 @@ const Configuration = (props) => {
         setSelectedFile(event.target.files[0])
     }
 
-    const submitFileUpload = () => {
-        const fd = new FormData();
-        fd.append('image', selectedFile.name,  selectedFile)
-        axios.post('http://localhost:5000/api/upload/', fd)
+    const submitFileUpload = (event) => {
+        axios.post('http://localhost:5000/api/upload/', {element1: selectedFile, elment2: selectedFile.name})
         .then(result => {
             console.log('retorno api', result)
         })
@@ -35,7 +34,7 @@ const Configuration = (props) => {
         <StyledFullContainer>
         <StyledContainerAvatar>
             <img src="https://meujornalzinho.s3-sa-east-1.amazonaws.com/assets/notfound.png"/>
-            <StyledInputFileUpload onChange={fileSelectedHandler} type="file"></StyledInputFileUpload>
+            <Upload/>
             <StyledButton onClick={submitFileUpload}>Alterar Logo</StyledButton>
         </StyledContainerAvatar>
         <StyledContainerConfigs>

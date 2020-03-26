@@ -27,6 +27,7 @@ function Register() {
     }
 
     const handleSubmit = () => {
+        console.log('ENVIIIIII', process.env.REACT_APP_API_URL)
         let isValid = true
         for (var prop in fields ) {
             if(fields[prop].length < 1) {isValid = false}
@@ -40,6 +41,7 @@ function Register() {
             })
             .then((result)=>{
                 setRedirectAccess(true)
+                localStorage.setItem('cli_id', result.data.clientId)
             })
             .catch((err)=>{
                 console.log('Não deu amigão', err.response)
@@ -66,7 +68,7 @@ function Register() {
                         <button onClick={handleSubmit}>Entrar</button>
 
                         {
-                            redirectAccess ? <Redirect to={{pathname: "/meus-tabloides", state: {username: fields.name}}}/> : ''
+                            redirectAccess ? <Redirect to={{pathname: "/home", state: {username: fields.name}}}/> : ''
                         }
                     </StyledForm>
                 </StyledContainerRegister>

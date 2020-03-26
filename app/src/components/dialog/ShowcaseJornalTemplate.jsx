@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom'
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -7,17 +8,19 @@ import {StyledButtonOk, StyledButtonCancel} from './style'
 
 export default function ShowcaseJornalTemaplate(props) {
     const [open, setOpen] = React.useState(false);
+    const [redirect, setRedirect] = React.useState(false)
 
-    // // const handleClickOpen = () => {
-    // //   setOpen(true);
-    // // };
-
-    const handleClose = (event) => {
-      setOpen(false);
-    };
+    const HandleChoiceOpen = event => {
+      props.handleDialog(false)
+      console.log('PASSOUUUUUUUU')
+      setRedirect(true)
+    }
 
   return (
     <div>
+      {
+        redirect && <Redirect to='/product-choice'/>
+      }
       <Dialog open={props.open} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
         <DialogContent>
@@ -30,7 +33,7 @@ export default function ShowcaseJornalTemaplate(props) {
           <StyledButtonOk onClick={() => {props.handleDialog(false)}} color="primary">
             Fechar
           </StyledButtonOk>
-          <StyledButtonCancel onClick={() => {props.handleDialog(false)}} color="primary">
+          <StyledButtonCancel onClick={HandleChoiceOpen} color="primary">
             Escolher
           </StyledButtonCancel>
         </DialogActions>

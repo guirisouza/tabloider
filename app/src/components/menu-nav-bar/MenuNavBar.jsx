@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import {StyledMenuNavBar, StyledOptionsMenuNavBar} from './style'
 
 class MenuNavBar extends Component {
@@ -11,7 +12,12 @@ class MenuNavBar extends Component {
                         <p><a>home</a></p>
                         <p><a>como funciona</a></p>
                         <p><a>planos</a></p>
-                        <p><a>login</a></p>
+                        <Link to='/register'>
+                            registre-se
+                        </Link>   
+                        <Link to='/login'>
+                            login
+                        </Link>    
                     </StyledOptionsMenuNavBar>
                 </StyledMenuNavBar>                   
             </>

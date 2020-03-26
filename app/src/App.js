@@ -17,22 +17,22 @@ class App extends Component {
           <Route exact path='/' component={SinglePageHome} />
         </Switch>
         <Switch>
-          <Route exact path='/configuracoes' component={Configuration} />
+          <Route exact path='/configuration' component={Configuration} />
         </Switch>
         <Switch>
-          <Route exact path='/meus-tabloides' component={Home} />
+          <Route exact path='/home' component={Home} />
         </Switch>
         <Switch>
-          <Route exact path='/cadastro' component={Register} />
+          <Route exact path='/register' component={Register} />
         </Switch>
         <Switch>
           <Route exact path='/login' component={Login} />
         </Switch>
         <Switch>
-          <Route exact path='/categoria-jornal' component={CategoryChoice} />
+          <Route exact path='/category-choice' component={CategoryChoice} />
         </Switch>
         <Switch>
-          <Route exact path='/escolher-produto' component={ProductChoice} />
+          <Route exact path='/product-choice' component={ProductChoice} />
         </Switch>
         <Switch>
           <Route exact path='/core' component={JornalGenCore} />

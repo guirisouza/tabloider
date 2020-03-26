@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const express      = require('express');
 const mongoose     = require('mongoose');
 const path         = require('path');
-const fileUpload   = require('express-fileupload')
+const morgan = require('morgan')
 
 mongoose
   .connect('mongodb+srv://admin:123qweasddas@cluster0-lunsv.mongodb.net/meujornalzinho', {useNewUrlParser: true})
@@ -24,10 +24,11 @@ const app = express();
 
 
 // Middleware Setup
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb', extended: true}));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(cookieParser());
-app.use(fileUpload());
+app.use(morgan('dev'))
+app.use("/files", express.static(path.resolve(__dirname, './uploads')))
 
 
 const cors = require('cors');

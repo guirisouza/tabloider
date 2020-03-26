@@ -31,7 +31,7 @@ const Home = (props) => {
             <div style={{display: 'flex', marginLeft: '40px', flexDirection: 'column', width: '400px', height: '400px', justifyContent: 'center'}}>
                 <h1>Olá, {localStorage.getItem('username')}</h1>
                 <p>Você ainda não possui nenhum tabloide, vamos criar agora?</p>
-                <Link to={{pathname: '/categoria-jornal', state:{categories: jornalCategory}}}>
+                <Link to={{pathname: '/category-choice', state:{categories: jornalCategory}}}>
                     <StyledButton>Criar Tabloide</StyledButton>
                 </Link>
             </div>
